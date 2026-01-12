@@ -1,0 +1,9 @@
+﻿RutaID,Ruta,Origen,Destino,Distancia_km,TipoTransporte
+1,MAD-BCN,MAD,BCN,617,Aviación
+2,BCN-MAD,BCN,MAD,640,Ferrocarril
+3,MAD-PMI,MAD,PMI,665,Aviación
+4,PMI-MAD,PMI,MAD,304,Aviación
+5,MAD-AGP,MAD,AGP,359,Ferrocarril
+6,AGP-MAD,AGP,MAD,328,Aviación
+7,BCN-PMI,BCN,PMI,630,Ferrocarril
+8,PMI-BCN,PMI,BCN,479,Aviación

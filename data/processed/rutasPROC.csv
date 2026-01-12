@@ -1,0 +1,9 @@
+﻿Destino,Suma de Distancia_km,Origen,Ruta,Recuento de RutaID,TipoTransporte
+AGP,359,MAD,MAD-AGP,1,Ferrocarril
+BCN,617,MAD,MAD-BCN,1,Aviación
+BCN,479,PMI,PMI-BCN,1,Aviación
+MAD,328,AGP,AGP-MAD,1,Aviación
+MAD,640,BCN,BCN-MAD,1,Ferrocarril
+MAD,304,PMI,PMI-MAD,1,Aviación
+PMI,630,BCN,BCN-PMI,1,Ferrocarril
+PMI,665,MAD,MAD-PMI,1,Aviación
