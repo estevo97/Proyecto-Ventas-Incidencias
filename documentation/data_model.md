@@ -2,11 +2,11 @@
 
 ```mermaid
 erDiagram
-    DimCalendario ||--o{ FactVentas : "Fecha"
-    DimProducto ||--o{ FactVentas : "Producto"
-    DimRuta ||--o{ FactVentas : "Ruta"
-    DimCalendario ||--o{ FactIncidencias : "Fecha"
-    DimRuta ||--o{ FactIncidencias : "Ruta"
+    Calendario (DIM) ||--o{ FactVentas : "Fecha"
+    Producto (DIM) ||--o{ FactVentas : "Producto"
+    Ruta (DIM) ||--o{ FactVentas : "Ruta"
+    Calendario (DIM) ||--o{ FactIncidencias : "Fecha"
+    Ruta (DIM) ||--o{ FactIncidencias : "Ruta"
 ```
 
 - **Grano de FactVentas**: día-ruta-producto. Usa `Fecha-Ruta` como clave técnica para evitar ambigüedades si hay rutas repetidas por día.
