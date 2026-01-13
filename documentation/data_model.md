@@ -2,12 +2,18 @@
 
 ```mermaid
 erDiagram
-    Calendario_DIM ||--o{ FactVentas : "Fecha"
-    Producto_DIM ||--o{ FactVentas : "Producto"
-    Ruta_DIM ||--o{ FactVentas : "Ruta"
-    Calendario_DIM ||--o{ FactIncidencias : "Fecha"
-    Ruta_DIM ||--o{ FactIncidencias : "Ruta"
-```
+    Calendario_DIM ||--o{ Ventas : "Fecha"
+    Producto_DIM ||--o{ Ventas : "Producto"
+    Ruta_DIM ||--o{ Ventas : "Ruta"
+    Calendario_DIM ||--o{ Incidencias : "Fecha"
+    Ruta_DIM ||--o{ Incidencias : "Ruta"
+    
+    classDef ventasStyle fill:#90EE90,stroke:#228B22,stroke-width:2px
+    classDef incidenciasStyle fill:#FFB6C1,stroke:#DC143C,stroke-width:2px
+    
+    class Ventas ventasStyle
+    class Incidencias incidenciasStyle
+```   
 
 - **Grano de FactVentas**: día-ruta-producto. Usa `Fecha-Ruta` como clave técnica para evitar ambigüedades si hay rutas repetidas por día.
 - **Grano de FactIncidencias**: día-ruta. Se vincula a DimCalendario y DimRuta, y se puede relacionar a FactVentas por `Fecha-Ruta` para analizar impacto en ventas.
