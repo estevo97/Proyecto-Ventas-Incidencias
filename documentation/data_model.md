@@ -7,7 +7,6 @@ erDiagram
     DimRuta ||--o{ FactVentas : "Ruta"
     DimCalendario ||--o{ FactIncidencias : "Fecha"
     DimRuta ||--o{ FactIncidencias : "Ruta"
-    FactVentas ||--o{ FactIncidencias : "Fecha-Ruta (grain compartido)"
 ```
 
 - **Grano de FactVentas**: día-ruta-producto. Usa `Fecha-Ruta` como clave técnica para evitar ambigüedades si hay rutas repetidas por día.
