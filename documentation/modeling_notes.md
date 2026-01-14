@@ -4,14 +4,14 @@
 
 ### Claves y grano
 
-- **FactVentas**:
+- **Ventas**:
   - **PK física actual**: `TicketID` (simplificada para este sample).
   - **⚠️ En datos reales**: La PK debería ser `TicketID + Producto`, ya que un ticket puede contener múltiples productos/líneas de venta.
   - **Grano actual**: cada fila representa una línea de venta (ticket-producto), pero TicketID no se repite en este dataset.
   - **Nivel de agregación**: La tabla ventas400PROC.csv está agregada a nivel `Fecha-Ruta-Producto` (suma de cantidades, tickets, ingresos por esa combinación).
   - Nota: Si se incorporasen datos sin agregar (grano fino), se debería usar `TicketID + Producto` como PK compuesta.
   
-- **FactIncidencias**:
+- **Incidencias**:
   - **PK física**: `IncidenciaID` (robusta ante cambios futuros).
   - **Grano actual**: Cada fila es una incidencia individual (sin agregación previa).
   - **Nivel de detalle**: día-ruta, pero pueden existir múltiples incidencias para la misma fecha-ruta (cosa que TicketID simple no permite en Ventas).
