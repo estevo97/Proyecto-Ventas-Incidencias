@@ -15,8 +15,8 @@ erDiagram
     class Incidencias incidenciasStyle
 ```   
 
-- **Ventas**: La clave primaria es TicketID. El grano es Fecha - Ruta - Producto
-- **Incidencias**: La clave primaria IncidenciaID. El grano es Fecha - Ruta
+- **Ventas**: La clave primaria es `TicketID`. El grano es `Fecha - Ruta - Producto`
+- **Incidencias**: La clave primaria `IncidenciaID`. El grano es `Fecha - Ruta`
 - **Claves recomendadas**:
   - Calendario: `Fecha` (derivada de columnas Año/Día).
   - Ruta: `Ruta`.
