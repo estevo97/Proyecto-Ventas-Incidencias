@@ -1,17 +1,20 @@
 # Notas de modelado
 
 ## Decisiones clave
-    
+
 ### Claves y grano
+
 - **FactVentas**:
-  - **PK física**: `TicketID` (identifica cada ticket único; robusta ante cambios futuros).
-  - **Grano analítico actual**: día-ruta-producto (nivel más granular en el modelo actual).
-  - La columna `Fecha-Ruta` es auxiliar para análisis cruzados, no la PK.
+  - **PK física actual**: `TicketID` (simplificada para este sample).
+  - **⚠️ En datos reales**: La PK debería ser `TicketID + Producto`, ya que un ticket puede contener múltiples productos/líneas de venta.
+  - **Grano actual**: cada fila representa una línea de venta (ticket-producto), pero TicketID no se repite en este dataset.
+  - **Nivel de agregación**: La tabla ventas400PROC.csv está agregada a nivel `Fecha-Ruta-Producto` (suma de cantidades, tickets, ingresos por esa combinación).
+  - Nota: Si se incorporasen datos sin agregar (grano fino), se debería usar `TicketID + Producto` como PK compuesta.
   
 - **FactIncidencias**:
-  - **PK física**: `IncidenciaID` (identifica cada incidencia única; permite múltiples incidencias por día-ruta).
-  - **Grano analítico actual**: día-ruta (en análisis agregados, pero pueden existir varias incidencias para la misma fecha-ruta).
-  - Si en el futuro se añaden campos como hora o tipo detallado, el grano puede cambiar, pero `IncidenciaID` seguirá siendo la PK.
+  - **PK física**: `IncidenciaID` (robusta ante cambios futuros).
+  - **Grano actual**: Cada fila es una incidencia individual (sin agregación previa).
+  - **Nivel de detalle**: día-ruta, pero pueden existir múltiples incidencias para la misma fecha-ruta (cosa que TicketID simple no permite en Ventas).
 
 ### Otras decisiones
 - Limpiar nombres con prefijos tipo "Suma de" o "Recuento de" solo para métricas calculadas; los atributos deben quedar sin agregación (ej.: `Cantidad`, `Ingresos`, `Objetivo`, `Pasajeros`).
@@ -43,6 +46,12 @@
 - Confirmar que en FactVentas el campo `PorcentajeCumplimiento` es calculado en origen; recalcularlo en el modelo para consistencia.
 - Verificar separadores decimales (coma vs punto) para evitar textos en lugar de números.
 - Normalizar nombres de productos y rutas para evitar duplicados por mayúsculas o tildes.
+
+## Asunciones y limitaciones (sample de ChatGPT)
+- **TicketID no se repite**: El dataset actual asume que cada ticket contiene un solo producto. En datos reales, un ticket puede tener múltiples productos/líneas, requiriendo PK compuesta `TicketID + Producto`.
+- **Datos pre-agregados**: FactVentas está agregada a nivel `Fecha-Ruta-Producto` (no es grano fino TicketID individual).
+- **Simplificación para demostración**: El modelo es válido para análisis BI pero no refleja la complejidad de un sistema real de POS (punto de venta).
+- **Escalabilidad**: Si se incorporasen datos granulares reales (cada línea del ticket), habría que ajustar PKs y recalcular agregaciones.
 
 ## Exportar imagen del modelo
 - El diagrama mermaid en `documentation/data_model.md` puede exportarse a PNG/SVG con `mmdc` (Mermaid CLI) o desde VS Code con la extensión Mermaid Markdown Preview.
