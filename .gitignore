@@ -60,5 +60,6 @@ desktop.ini
 # Virtual environments
 mi_nuevo_entorno/
 venv/
+venv_ventas/
 env/
 ENV/
