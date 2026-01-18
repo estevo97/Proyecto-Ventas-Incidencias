@@ -17,15 +17,18 @@ Se observa que la variable Incidencia es binaria, tomando sólo 0 y 1 como valor
 
 Utilizaremos la prueba Point - biserial correlation, que es una variable de la prueba Pearson que se usa cuando una variable es continua y la otra binaria. También usaremos como referencia el test Spearman.
 
-============================================================
-ANÁLISIS DE CORRELACIÓN: Incidencias vs Ingresos
-============================================================
+### Análisis de correlación — Incidencias vs Ingresos
 
-Point Biserial Correlation:   0.0475 (p-value: 6.5484e-01)
-Spearman Correlation:  0.0788 (p-value: 4.5791e-01)
+| Métrica | Valor |
+|---:|:---|
+| Point biserial correlation (r) | 0.0475 |
+| p-value (point biserial) | 6.5484e-01 |
+| Spearman (rho) | 0.0788 |
+| p-value (Spearman) | 4.5791e-01 |
 
-📊 Conclusión: La correlación es NO significativa (p >= 0.05)
+**📊 Conclusión:** **No significativa** — no hay evidencia de correlación entre incidencias e ingresos (p ≥ 0.05).
 
+---
 ## Recomendaciones
 - Acción inmediata (p. ej., priorizar X, recopilar más datos Y).
 - Experimentos/validaciones a realizar.
