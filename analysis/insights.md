@@ -1,24 +1,30 @@
 # Resumen de correlación e impacto. 
 
 ## Resumen ejecutivo
-Breve síntesis (2–3 frases) con la conclusión principal.
+Este .md analiza la relación estadística entre las incidencias operacionales y los ingresos de ventas.
 
 ## Objetivo
-Explicar qué se buscó con el análisis de correlación_impacto.
+- Calcular correlación entre número de incidencias e ingresos por día
+- Comparar ingresos en días CON vs SIN incidencias
+- Analizar impacto por tipo y severidad de incidencia
+- Cuantificar el efecto económico de las incidencias
 
-## Metodología
-- Datos usados: archivo(s) y fecha.
-- Métrica de correlación: Pearson / Spearman / etc.
-- Cómo se midió "impacto" (definición).
+## Análisis de correlación
 
-## Hallazgos principales
-- Variable A vs Variable B: correlación X.XX — interpretación (p. ej., fuerte positiva).
-- Variable C vs Variable D: correlación Y.YY — interpretación.
-(Pegar aquí las top 5 correlaciones relevantes con sus valores y significancia.)
+### Scatterplot. Correlación Ingresos e Incidencias
 
-## Impacto/Interpretación
-- Qué implican estos hallazgos para el negocio/operación.
-- Riesgos/limitaciones (sesgos, tamaño muestral, variables confusoras).
+Se observa que la variable Incidencia es binaria, tomando sólo 0 y 1 como valores. No se puede usar el coeficiente de correlación Pearson.
+
+Utilizaremos la prueba Point - biserial correlation, que es una variable de la prueba Pearson que se usa cuando una variable es continua y la otra binaria. También usaremos como referencia el test Spearman.
+
+============================================================
+ANÁLISIS DE CORRELACIÓN: Incidencias vs Ingresos
+============================================================
+
+Point Biserial Correlation:   0.0475 (p-value: 6.5484e-01)
+Spearman Correlation:  0.0788 (p-value: 4.5791e-01)
+
+📊 Conclusión: La correlación es NO significativa (p >= 0.05)
 
 ## Recomendaciones
 - Acción inmediata (p. ej., priorizar X, recopilar más datos Y).
