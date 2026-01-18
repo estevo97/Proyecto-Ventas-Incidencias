@@ -42,13 +42,50 @@ Queremos determinar si hay diferencia significativa entre la media de ingresos e
   - H0: no hay diferencia en la media de ingresos entre ambos grupos.  
   - H1: existe diferencia en la media de ingresos.
 
-Ejecutar los tests en el notebook y añadir los resultados numéricos (estadísticos, p‑values) y la conclusión aquí.
+---
+
+Aún con todo, queremos ver si existen estas diferencias significativas. Como tenemos dos muestras contínuas con media y varianza similar e independientes, usaremos el estadítico T para muestras independientes. Como referencia, también aplicaremos Mann-Whitney.
+
+### Prueba de Hipótesis: T-Test
+
+| Test | Estadístico | p‑value |
+|---|---:|---:|
+| T‑test (paramétrico) | t = 0.4486 | 6.5484e-01 |
+| Mann–Whitney U (no param.) | U = 1091.50 | 4.5727e-01 |
+
+**Conclusión:** ✗ No rechazamos H0 (p ≥ 0.05). No hay evidencia de diferencia significativa en la media de ingresos entre días CON y SIN incidencias.
+
+Como vemos, ese 1.63% de diferencia no es suficiente para afirmar que haya diferencia significativa entre los días con incidencias y los días en los que no la hay. Podemos decir, pues, que las incidencias no afectan, en el global de los datos, a los ingresos promedio. Podríamos, en un futuro, desglosar en categorías estos datos y aplicar, para cada caso, la prueba T. De este modo podríamos encontrar algún contexto de filtro (por ejemplo, cancelaciones en ferrocarriles en un mes donde haya habido inclemencias climáticas) en donde sí se noten estas diferencias de forma significativa.
 
 ---
 
-Queremos determinar si hay diferencia significativa entre la media de ingresos en días con incidencias respecto a días sin incidencias. Si calculamos la media, obtenemos un resultado sorprendente puesto que se obtienen en promedio unos ingresos un 1.63 % superiores en los días en los  que hay incidencias. 
+### Visualización: Box Plot Comparativo
 
-Aún con todo, queremos ver si existen estas diferencias significativas. Como tenemos dos muestras contínuas con media y varianza similar e independientes, usaremos el estadítico T para muestras independientes. Como referencia, también aplicaremos Mann-Whitney.
+## Análisis por Tipo de Incidencia
+
+### Prueba ANOVA
+
+Como tenemos la lista de ingresos para cada tipo de incidencia, vamos a ver si hay diferencias significativas entre ellas. Para eso, utilizaremos la prueba ANOVA, ya que tenemos que comparar más de dos clases de datos.
+
+Los resultados no son significativos, por lo que no podemos afirmar que haya diferencias significativas en los ingresos obtenidos en cada uno de los casos en los que hay una incidencia.
+
+### Promedio de ingresos para cada tipo de incidencia
+
+Como vemos, los promedios en ingresos para cada tipo de incidencia son muy similares
+
+## Análisis por Severidad
+
+### Análisis ANOVA de ingresos en función de la severidad de la incidencia
+
+Los resultados siguen sin ser significativos, aunque el p-valor es más bajo que cuando no se tiene en cuenta la severidad de las incidencias.
+
+### Ingresos promedio en función de la severidad de la incidencia
+
+Resulta llamativo que los ingresos más bajos se obtengan cuando la severidad es más baja y que los más altos se den con severidad media.
+
+## Heatmap de Correlaciones
+
+## Resumen Ejecutivo de Hallazgos
 
 ## Recomendaciones
 - Acción inmediata (p. ej., priorizar X, recopilar más datos Y).
