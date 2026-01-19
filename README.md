@@ -1,6 +1,8 @@
 # 📊 Proyecto: Análisis de Ventas e Incidencias Operacionales
 
-Análisis completo de datos de ventas y su correlación con incidencias operacionales en sistemas de transporte (aviación y ferrocarril). Proyecto end-to-end que incluye generación de datos sintéticos realistas, dashboard interactivo en Power BI y análisis estadístico avanzado.
+- EDA con datos de ingresos por venta de alimentos en sistemas de transporte (aviación y ferrocarril). 
+- Análisis estadístico del impacto de las incidencias operacionales sobre tales ingresos. 
+- Proyecto end-to-end que incluye generación de datos sintéticos realistas, dashboard interactivo en Power BI y análisis estadístico avanzado.
 
 ---
 
@@ -44,45 +46,7 @@ Proyecto-Ventas-Incidencias/
 
 ## 📊 Datasets
 
-### Ventas_Realistas.csv
-**90 días de datos** (Enero - Marzo 2024) con **3,645 transacciones**
-
-| Campo | Descripción | Ejemplo |
-|-------|-------------|---------|
-| `VentaID` | Identificador único | V001 |
-| `Fecha` | Fecha de venta | 2024-01-15 |
-| `Ruta` | Origen-Destino | BCN-PMI |
-| `TipoTransporte` | Aviación o Ferrocarril | Aviación |
-| `Producto` | Tipo de producto vendido | Bocadillo, Cerveza |
-| `Cantidad` | Unidades vendidas | 2 |
-| `PrecioUnitario` | Precio por unidad (€) | 3.50 |
-| `Ingresos` | Total transacción (€) | 7.00 |
-
-**Características:**
-- Variación estacional (picos en fines de semana)
-- Diferencias por ruta (BCN-PMI más rentable)
-- Tipos de transporte con precios diferenciados
-
-### Incidencias.csv
-**54 incidencias** registradas durante el período
-
-| Campo | Descripción | Ejemplo |
-|-------|-------------|---------|
-| `IncidenciaID` | Identificador único | INC001 |
-| `Fecha` | Fecha de incidencia | 2024-01-10 |
-| `Ruta` | Ruta afectada | MAD-BCN |
-| `Fecha-Ruta` | Combinación | 2024-01-10_MAD-BCN |
-| `TipoIncidencia` | Tipo de problema | Terminal de pago |
-| `Severidad` | Baja/Media/Alta | Alta |
-| `DuracionMin` | Duración en minutos | 45 |
-
-**Tipos de Incidencias:**
-- Terminal de pago (26%)
-- Cancelación (26%)
-- Problema TPV (31%)
-- Retraso (11%)
-- Avería (9%)
-- Falta Stock (11%)
+#### ver Documentation
 
 ---
 
@@ -92,29 +56,13 @@ El dashboard consta de **3 páginas principales:**
 
 ### Página 1: Resumen Ejecutivo
 - **KPIs principales:**
-  - Ingresos totales: €74,440
-  - Objetivo: €95,000
-  - % Cumplimiento: 78.46% ⚠️
-  - Ingreso promedio ticket: €20.41
-  - Ingresos por pasajero: €0.07
 - **Gráfico:** Evolución mensual Ingresos vs Objetivo
 - **Hallazgos clave:**
-  - Meta no alcanzada por 2.21%
-  - 47% más ingresos en días SIN incidencias
-  - 14.75% de días con incidencias
 
 ### Página 2: Análisis de Ventas
-- Ranking de productos con más ingresos
-- Ingresos por ruta (top: PMI-BCN)
-- Comparativa por tipo de transporte
-- Overview de insights de ventas
+
 
 ### Página 3: Análisis de Incidencias
-- Distribución por tipo (Donut chart)
-- Incidencias por ruta y transporte
-- Comparativa días CON vs SIN incidencias
-- Tendencia temporal de incidencias
-- Impacto económico cuantificado
 
 **Segmentadores disponibles:**
 - Mes
@@ -154,47 +102,6 @@ El notebook [`correlacion_impacto.ipynb`](analysis/correlacion_impacto.ipynb) in
 
 ---
 
-## 🚀 Instalación y Uso
-
-### Requisitos Previos
-- Python 3.8+
-- Power BI Desktop (para visualizar dashboard)
-
-### 1. Clonar el Repositorio
-```bash
-git clone https://github.com/tu-usuario/Proyecto-Ventas-Incidencias.git
-cd Proyecto-Ventas-Incidencias
-```
-
-### 2. Instalar Dependencias
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Generar Datos (Opcional)
-Si quieres regenerar los datasets:
-
-```bash
-# Generar ventas
-python scripts/generar_ventas_realistas.py
-
-# Generar incidencias
-python scripts/generar_incidencias.py
-```
-
-### 4. Ejecutar Análisis
-```bash
-# Abrir notebook de análisis
-jupyter notebook analysis/correlacion_impacto.ipynb
-```
-
-### 5. Ver Dashboard
-1. Abrir `dashboard/dashboard_ventas_incidencias.pbix` en Power BI Desktop
-2. Refrescar datos si es necesario
-3. Explorar las 3 páginas interactivas
-
----
-
 ## 📊 Principales Hallazgos
 
 ### 💰 Impacto Económico
@@ -216,36 +123,12 @@ jupyter notebook analysis/correlacion_impacto.ipynb
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
-
-| Tecnología | Uso |
-|------------|-----|
-| Python 3.11 | Generación de datos y análisis |
-| Pandas | Manipulación de datos |
-| NumPy | Cálculos numéricos |
-| Matplotlib/Seaborn | Visualizaciones estáticas |
-| Plotly | Visualizaciones interactivas |
-| SciPy | Pruebas estadísticas |
-| Power BI Desktop | Dashboard interactivo |
-| Jupyter Notebook | Análisis exploratorio |
-
----
-
-## 📝 Próximos Pasos
-
-- [ ] Crear dashboard web interactivo con Streamlit
-- [ ] Implementar modelos predictivos de incidencias
-- [ ] Automatizar alertas por incidencias críticas
-- [ ] Análisis de series temporales (ARIMA/Prophet)
-- [ ] Integración con datos reales (APIs)
-
----
 
 ## 👤 Autor
 
-**Tu Nombre**
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- LinkedIn: [Tu Perfil](https://linkedin.com/in/tu-perfil)
+**Estevo Arias García**
+- GitHub: [@estevo97](https://github.com/estevo97)
+- LinkedIn: [Estevo Arias García](https://https://www.linkedin.com/in/estevoariasgarcia/)
 
 ---
 
@@ -253,12 +136,5 @@ jupyter notebook analysis/correlacion_impacto.ipynb
 
 Este proyecto es de código abierto y está disponible bajo la [MIT License](LICENSE).
 
----
 
-## 🙏 Agradecimientos
 
-Proyecto desarrollado como parte del portfolio de ciencia de datos y análisis de negocio.
-
----
-
-**⭐ Si te resultó útil este proyecto, dale una estrella en GitHub!**

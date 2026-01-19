@@ -10,17 +10,36 @@ Este .md analiza la relación estadística entre las incidencias operacionales y
 - Desglosar las Incidencias por tipo y por grado de severidad y ver si se encuentran diferencias entre las categorías.
 - Cuantificar, si es posible, el efecto económico de las incidencias.
 
-## Análisis de correlación
-![Correlación Incidencias vs Ingresos](../images/correlacion_incidencias_ingresos.jpg)
-Para determinar si hay correlación entre dos variables cuantitativas, lo primero es enfrentarlas en una nube de puntos, siendo la Variable 1 el eje X y la Variable 2 el eje Y.
+Para lograr los objetivos necesitamos centralizar los datos en una única tabla. Creamos una tabla con los datos de ingresos e incidencias agregados por día. La tabla es la siguiente:
 
-### Scatterplot. Correlación Ingresos e Incidencias
+
+| Fecha      | Ingresos | Tickets | NumIncidencias | Suma de DuracionMin | TieneIncidencia |
+|------------|--------:|-------:|---------------:|--------------------:|----------------:|
+| 2024-01-01 |  639.40 |     34 |            0.0 |                 0.0 |               0 |
+| 2024-01-02 | 1,116.47|     50 |            0.0 |                 0.0 |               0 |
+| 2024-01-03 |  761.36 |     37 |            1.0 |               148.0 |               1 |
+| 2024-01-04 |  809.75 |     42 |            0.0 |                 0.0 |               0 |
+| 2024-01-05 |  942.39 |     44 |            1.0 |               106.0 |               1 |
+
+## Heatmap de Correlaciones
+Antes de empezar con el análisis, hacemos una matriz de correlaciones para las siguientes covariables: Ingresos, Tickets, NumIncidencias, Suma de DuracionMin. De este modo podemos hacernos una idea de qué correlaciones puede ser interesante estudiar.
+![Matriz correlaciones](../images/matriz_correlaciones.jpg)
+Observamos varias cosas interesantes: en contra de lo que cabría esperar, el número de incidencias al día no está inversamente relacionado con los ingresos, sino de forma directa. La suma total en minutos de las incidencias, por otro lado, sí que lo está. La fecha nos dice que, yendonos atrás en el tiempo los ingresos disminuirían, pero el coeficiente no es muy alto con lo que no debe ser significativo este hecho. 
+
+La correlación entre tickets e ingresos es muy alta, pero no la vamos a estudiar porque es evidente que, a mayor número de tickets vendidos por día, mayores ingresos.
+
+# ANÁLISIS
+
+## 1. INCIDENCIAS VS INGRESOS 
+### Análisis de correlación
+Para determinar si hay correlación entre dos variables cuantitativas, lo primero es hacernos una idea visual enfrentándolas en una nube de puntos, siendo la Variable 1 el eje X y la Variable 2 el eje Y. De este modo, podemos saber qué tipo de prueba es la mejor para el análisis.
+![Correlación Incidencias vs Ingresos](../images/correlacion_incidencias_ingresos.jpg)
 
 Se observa que la variable Incidencia es binaria, tomando sólo 0 y 1 como valores. No se puede usar el coeficiente de correlación Pearson.
 
 Utilizaremos la prueba Point - biserial correlation, que es una variable de la prueba Pearson que se usa cuando una variable es continua y la otra binaria. También usaremos como referencia el test Spearman.
 
-### Análisis de correlación — Incidencias vs Ingresos
+### Resultados
 
 | Métrica | Valor |
 |---:|:---|
@@ -33,9 +52,29 @@ Utilizaremos la prueba Point - biserial correlation, que es una variable de la p
 
 ---
 
-## Comparación: Días CON vs SIN Incidencias
+## 2. Días CON vs SIN Incidencias
 
 Queremos determinar si hay diferencia significativa entre la media de ingresos en días con incidencias respecto a días sin incidencias. Al calcular las medias observamos que, en promedio, los días con incidencias presentan un incremento del 1.63 %.
+
+![Barplot ingresos CON vs SIN incidencias](../images/BARPLOT_distribucion_ingresos_con_vs_sin_incidencias.jpg)
+
+### Comparación: Días CON vs SIN Incidencias
+
+
+- 📈 Días CON incidencias  
+  - Media: €823.37  
+  - Desv. Est.: €126.35
+
+- 📉 Días SIN incidencias  
+  - Media: €810.19  
+  - Desv. Est.: €152.79
+
+**💰 IMPACTO ECONÓMICO**  
+- Diferencia media: **€13.18 (+1.63%)**  
+- Conclusión: ✓ Los días CON incidencias generan MÁS ingresos (posible confusión)
+
+### Prueba a realizar
+Aún con todo, queremos ver si existen estas diferencias significativas. Como tenemos dos muestras contínuas con media y varianza similar e independientes, usaremos el estadítico T para muestras independientes. Como referencia, también aplicaremos Mann-Whitney.
 
 - Diseño: dos muestras independientes (Ingresos en días CON vs SIN incidencias).  
 - Tests:  
@@ -46,8 +85,6 @@ Queremos determinar si hay diferencia significativa entre la media de ingresos e
   - H1: existe diferencia en la media de ingresos.
 
 ---
-
-Aún con todo, queremos ver si existen estas diferencias significativas. Como tenemos dos muestras contínuas con media y varianza similar e independientes, usaremos el estadítico T para muestras independientes. Como referencia, también aplicaremos Mann-Whitney.
 
 ### Prueba de Hipótesis: T-Test
 
@@ -91,8 +128,6 @@ Los resultados siguen sin ser significativos, aunque el p-valor es más bajo que
 
 Resulta llamativo que los ingresos más bajos se obtengan cuando la severidad es más baja y que los más altos se den con severidad media.
 
-## Heatmap de Correlaciones
-![Matriz correlaciones](../images/matriz_correlaciones.jpg)
 
 ## Resumen Ejecutivo de Hallazgos
 
