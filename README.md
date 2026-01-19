@@ -102,47 +102,6 @@ El notebook [`correlacion_impacto.ipynb`](analysis/correlacion_impacto.ipynb) in
 
 ---
 
-## 🚀 Instalación y Uso
-
-### Requisitos Previos
-- Python 3.8+
-- Power BI Desktop (para visualizar dashboard)
-
-### 1. Clonar el Repositorio
-```bash
-git clone https://github.com/tu-usuario/Proyecto-Ventas-Incidencias.git
-cd Proyecto-Ventas-Incidencias
-```
-
-### 2. Instalar Dependencias
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Generar Datos (Opcional)
-Si quieres regenerar los datasets:
-
-```bash
-# Generar ventas
-python scripts/generar_ventas_realistas.py
-
-# Generar incidencias
-python scripts/generar_incidencias.py
-```
-
-### 4. Ejecutar Análisis
-```bash
-# Abrir notebook de análisis
-jupyter notebook analysis/correlacion_impacto.ipynb
-```
-
-### 5. Ver Dashboard
-1. Abrir `dashboard/dashboard_ventas_incidencias.pbix` en Power BI Desktop
-2. Refrescar datos si es necesario
-3. Explorar las 3 páginas interactivas
-
----
-
 ## 📊 Principales Hallazgos
 
 ### 💰 Impacto Económico
@@ -164,36 +123,12 @@ jupyter notebook analysis/correlacion_impacto.ipynb
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
-
-| Tecnología | Uso |
-|------------|-----|
-| Python 3.11 | Generación de datos y análisis |
-| Pandas | Manipulación de datos |
-| NumPy | Cálculos numéricos |
-| Matplotlib/Seaborn | Visualizaciones estáticas |
-| Plotly | Visualizaciones interactivas |
-| SciPy | Pruebas estadísticas |
-| Power BI Desktop | Dashboard interactivo |
-| Jupyter Notebook | Análisis exploratorio |
-
----
-
-## 📝 Próximos Pasos
-
-- [ ] Crear dashboard web interactivo con Streamlit
-- [ ] Implementar modelos predictivos de incidencias
-- [ ] Automatizar alertas por incidencias críticas
-- [ ] Análisis de series temporales (ARIMA/Prophet)
-- [ ] Integración con datos reales (APIs)
-
----
 
 ## 👤 Autor
 
 **Tu Nombre**
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- LinkedIn: [Tu Perfil](https://linkedin.com/in/tu-perfil)
+- GitHub: [@tu-usuario](https://github.com/estevo97)
+- LinkedIn: [Tu Perfil](https://https://www.linkedin.com/in/estevoariasgarcia/)
 
 ---
 
@@ -201,12 +136,5 @@ jupyter notebook analysis/correlacion_impacto.ipynb
 
 Este proyecto es de código abierto y está disponible bajo la [MIT License](LICENSE).
 
----
 
-## 🙏 Agradecimientos
 
-Proyecto desarrollado como parte del portfolio de ciencia de datos y análisis de negocio.
-
----
-
-**⭐ Si te resultó útil este proyecto, dale una estrella en GitHub!**
