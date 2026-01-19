@@ -1,7 +1,8 @@
 # 📊 Proyecto: Análisis de Ventas e Incidencias Operacionales
 
-EDA con datos de ingresos por venta de alimentos en sistemas de transporte (aviación y ferrocarril). Análisis estadístico del impacto de las incidencias operacionales sobre tales ingresos. 
-Proyecto end-to-end que incluye generación de datos sintéticos realistas, dashboard interactivo en Power BI y análisis estadístico avanzado.
+- EDA con datos de ingresos por venta de alimentos en sistemas de transporte (aviación y ferrocarril). 
+- Análisis estadístico del impacto de las incidencias operacionales sobre tales ingresos. 
+- Proyecto end-to-end que incluye generación de datos sintéticos realistas, dashboard interactivo en Power BI y análisis estadístico avanzado.
 
 ---
 
