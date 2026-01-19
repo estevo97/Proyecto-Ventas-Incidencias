@@ -135,7 +135,7 @@ No se han encontrado, por el momento, insights significativos. El volumen de dat
 
 ---
 
-## 📊 Datos generales
+### 📊 Datos generales
 | Métrica | Valor |
 |---|---:|
 | Período analizado | 2024-01-01 — 2024-03-31 |
@@ -143,24 +143,24 @@ No se han encontrado, por el momento, insights significativos. El volumen de dat
 | Días con incidencias | 54 (59.3%) |
 | Total incidencias | 54 |
 
-## 💰 Impacto económico
+### 💰 Impacto económico
 | Métrica | Valor |
 |---|---:|
 | Ingresos días CON incidencias | €44,461.72 |
 | Ingresos días SIN incidencias | €29,976.92 |
 | Diferencia media diaria | **€13.18 (+1.63%)** |
 
-## 📈 Correlación y significancia
+### 📈 Correlación y significancia
 | Métrica | Valor |
 |---|---:|
 | Pearson r | 0.0475 (p = 6.5484e-01) |
 | Interpretación | Correlación débil positiva |
 | Resultado pruebas | ✗ Diferencia NO significativa (p ≥ 0.05) — no evidencia de impacto |
 
-## ⚠️ Tipo más problemático
+### ⚠️ Tipo más problemático
 - Avería — Ingreso medio: **€808.26**
 
-## 🎯 Severidad más crítica
+### 🎯 Severidad más crítica
 - Baja — Ingreso medio: **€787.87**
 
 ---
