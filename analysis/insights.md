@@ -10,6 +10,17 @@ Este .md analiza la relación estadística entre las incidencias operacionales y
 - Desglosar las Incidencias por tipo y por grado de severidad y ver si se encuentran diferencias entre las categorías.
 - Cuantificar, si es posible, el efecto económico de las incidencias.
 
+Para lograr los objetivos necesitamos centralizar los datos en una única tabla. Creamos una tabla con los datos de ingresos e incidencias agregados por día. La tabla es la siguiente:
+
+
+| Fecha      | Ingresos | Tickets | NumIncidencias | Suma de DuracionMin | TieneIncidencia |
+|------------|--------:|-------:|---------------:|--------------------:|----------------:|
+| 2024-01-01 |  639.40 |     34 |            0.0 |                 0.0 |               0 |
+| 2024-01-02 | 1,116.47|     50 |            0.0 |                 0.0 |               0 |
+| 2024-01-03 |  761.36 |     37 |            1.0 |               148.0 |               1 |
+| 2024-01-04 |  809.75 |     42 |            0.0 |                 0.0 |               0 |
+| 2024-01-05 |  942.39 |     44 |            1.0 |               106.0 |               1 |
+
 ## Heatmap de Correlaciones
 Antes de empezar con el análisis, hacemos una matriz de correlaciones para las siguientes covariables: Ingresos, Tickets, NumIncidencias, Suma de DuracionMin. De este modo podemos hacernos una idea de qué correlaciones puede ser interesante estudiar.
 ![Matriz correlaciones](../images/matriz_correlaciones.jpg)
