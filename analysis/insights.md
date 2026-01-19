@@ -11,7 +11,7 @@ Este .md analiza la relación estadística entre las incidencias operacionales y
 - Cuantificar, si es posible, el efecto económico de las incidencias.
 
 ## Análisis de correlación
-![Correlación Incidencias vs Ingresos](../images/correlacion_incidencias_ingresos.png)
+![Correlación Incidencias vs Ingresos](../images/correlacion_incidencias_ingresos.jpg)
 Para determinar si hay correlación entre dos variables cuantitativas, lo primero es enfrentarlas en una nube de puntos, siendo la Variable 1 el eje X y la Variable 2 el eje Y.
 
 ### Scatterplot. Correlación Ingresos e Incidencias
