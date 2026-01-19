@@ -103,7 +103,7 @@ Como vemos, ese 1.63% de diferencia no es suficiente para afirmar que haya difer
 
 ![Comparación ingresos CON vs SIN incidencias](../images/distribucion_ingresos_con_vs_sin_incidencias.jpg)
 
-## Análisis por Tipo de Incidencia
+## 3. Por TIPO de Incidencia
 
 ### Prueba ANOVA
 
@@ -117,7 +117,7 @@ Los resultados no son significativos, por lo que no podemos afirmar que haya dif
 
 Como vemos, los promedios en ingresos para cada tipo de incidencia son muy similares
 
-## Análisis por Severidad
+## 4. Por SEVERIDAD
 
 ### Análisis ANOVA de ingresos en función de la severidad de la incidencia
 
@@ -129,7 +129,41 @@ Los resultados siguen sin ser significativos, aunque el p-valor es más bajo que
 Resulta llamativo que los ingresos más bajos se obtengan cuando la severidad es más baja y que los más altos se den con severidad media.
 
 
-## Resumen Ejecutivo de Hallazgos
+## RESUMEN Ejecutivo de Hallazgos
+
+No se han encontrado, por el momento, insights significativos. El volumen de datos de los que disponemos es todavía muy reducido; tal vez en el siguiente trimestre se puedan hallar insights.
+
+---
+
+### 📊 Datos generales
+| Métrica | Valor |
+|---|---:|
+| Período analizado | 2024-01-01 — 2024-03-31 |
+| Total días | 91 |
+| Días con incidencias | 54 (59.3%) |
+| Total incidencias | 54 |
+
+### 💰 Impacto económico
+| Métrica | Valor (promedio) |
+|---|---:|
+| Ingresos días CON incidencias | 823.37 €|
+| Ingresos días SIN incidencias | 810.19 €|
+| Diferencia media diaria | **€13.18 (+1.63%)** |
+
+### 📈 Correlación y significancia
+| Métrica | Valor |
+|---|---:|
+| Point biserial | 0.0475 (p = 6.5484e-01) |
+| Interpretación | Correlación débil positiva |
+| Resultado pruebas | ✗ Diferencia NO significativa (p ≥ 0.05) — no evidencia de impacto |
+
+### ⚠️ Tipo más problemático
+- Avería — Ingreso medio: **€808.26** - (valor muy similar al promedio de las otras categorías)
+
+### 🎯 Severidad más crítica
+- Baja — Ingreso medio: **€787.87** - (valor bastante al promedio de las otras categorías)
+
+---
 
 ## Recomendaciones
 - Acción inmediata (p. ej., priorizar X, recopilar más datos Y).
