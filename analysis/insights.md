@@ -10,6 +10,10 @@ Este .md analiza la relación estadística entre las incidencias operacionales y
 - Desglosar las Incidencias por tipo y por grado de severidad y ver si se encuentran diferencias entre las categorías.
 - Cuantificar, si es posible, el efecto económico de las incidencias.
 
+## Heatmap de Correlaciones
+Antes de empezar con el análisis, hacemos una matriz de correlaciones para las siguientes covariables: Ingresos, Tickets, NumIncidencias, Suma de DuracionMin. De este modo podemos hacernos una idea de qué correlaciones puede ser interesante estudiar.
+![Matriz correlaciones](../images/matriz_correlaciones.jpg)
+
 ## Análisis de correlación
 ![Correlación Incidencias vs Ingresos](../images/correlacion_incidencias_ingresos.jpg)
 Para determinar si hay correlación entre dos variables cuantitativas, lo primero es enfrentarlas en una nube de puntos, siendo la Variable 1 el eje X y la Variable 2 el eje Y.
@@ -91,8 +95,6 @@ Los resultados siguen sin ser significativos, aunque el p-valor es más bajo que
 
 Resulta llamativo que los ingresos más bajos se obtengan cuando la severidad es más baja y que los más altos se den con severidad media.
 
-## Heatmap de Correlaciones
-![Matriz correlaciones](../images/matriz_correlaciones.jpg)
 
 ## Resumen Ejecutivo de Hallazgos
 
