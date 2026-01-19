@@ -56,29 +56,13 @@ El dashboard consta de **3 páginas principales:**
 
 ### Página 1: Resumen Ejecutivo
 - **KPIs principales:**
-  - Ingresos totales: €74,440
-  - Objetivo: €95,000
-  - % Cumplimiento: 78.46% ⚠️
-  - Ingreso promedio ticket: €20.41
-  - Ingresos por pasajero: €0.07
 - **Gráfico:** Evolución mensual Ingresos vs Objetivo
 - **Hallazgos clave:**
-  - Meta no alcanzada por 2.21%
-  - 47% más ingresos en días SIN incidencias
-  - 14.75% de días con incidencias
 
 ### Página 2: Análisis de Ventas
-- Ranking de productos con más ingresos
-- Ingresos por ruta (top: PMI-BCN)
-- Comparativa por tipo de transporte
-- Overview de insights de ventas
+
 
 ### Página 3: Análisis de Incidencias
-- Distribución por tipo (Donut chart)
-- Incidencias por ruta y transporte
-- Comparativa días CON vs SIN incidencias
-- Tendencia temporal de incidencias
-- Impacto económico cuantificado
 
 **Segmentadores disponibles:**
 - Mes
