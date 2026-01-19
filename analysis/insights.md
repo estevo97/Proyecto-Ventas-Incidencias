@@ -158,10 +158,10 @@ No se han encontrado, por el momento, insights significativos. El volumen de dat
 | Resultado pruebas | ✗ Diferencia NO significativa (p ≥ 0.05) — no evidencia de impacto |
 
 ### ⚠️ Tipo más problemático
-- Avería — Ingreso medio: **€808.26**
+- Avería — Ingreso medio: **€808.26** - (valor muy similar al promedio de las otras categorías)
 
 ### 🎯 Severidad más crítica
-- Baja — Ingreso medio: **€787.87**
+- Baja — Ingreso medio: **€787.87** - (valor bastante al promedio de las otras categorías)
 
 ---
 
