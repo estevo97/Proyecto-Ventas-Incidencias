@@ -126,9 +126,9 @@ El notebook [`correlacion_impacto.ipynb`](analysis/correlacion_impacto.ipynb) in
 
 ## 👤 Autor
 
-**Tu Nombre**
-- GitHub: [@tu-usuario](https://github.com/estevo97)
-- LinkedIn: [Tu Perfil](https://https://www.linkedin.com/in/estevoariasgarcia/)
+**Estevo Arias García**
+- GitHub: [@estevo97](https://github.com/estevo97)
+- LinkedIn: [Estevo Arias García](https://https://www.linkedin.com/in/estevoariasgarcia/)
 
 ---
 
