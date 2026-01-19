@@ -1,15 +1,18 @@
-# Resumen de correlación e impacto. 
+# Análisis del impacto de las Incidencias sobre los Ingresos
+
 
 ## Resumen ejecutivo
 Este .md analiza la relación estadística entre las incidencias operacionales y los ingresos de ventas.
 
 ## Objetivo
-- Calcular correlación entre número de incidencias e ingresos por día
-- Comparar ingresos en días CON vs SIN incidencias
-- Analizar impacto por tipo y severidad de incidencia
-- Cuantificar el efecto económico de las incidencias
+- Determinar si existe correlación entre número de incidencias e ingresos por día.
+- Determinar si existe diferencia estadística en ingresos en días CON vs SIN incidencias.
+- Desglosar las Incidencias por tipo y por grado de severidad y ver si se encuentran diferencias entre las categorías.
+- Cuantificar, si es posible, el efecto económico de las incidencias.
 
 ## Análisis de correlación
+![Correlación Incidencias vs Ingresos](../images/correlacion_incidencias_ingresos.png)
+Para determinar si hay correlación entre dos variables cuantitativas, lo primero es enfrentarlas en una nube de puntos, siendo la Variable 1 el eje X y la Variable 2 el eje Y.
 
 ### Scatterplot. Correlación Ingresos e Incidencias
 
