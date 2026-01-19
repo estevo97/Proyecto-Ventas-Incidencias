@@ -64,6 +64,8 @@ Como vemos, ese 1.63% de diferencia no es suficiente para afirmar que haya difer
 
 ### Visualización: Box Plot Comparativo
 
+![Comparación ingresos CON vs SIN incidencias](../images/distribucion_ingresos_con_vs_sin_incidencias.jpg)
+
 ## Análisis por Tipo de Incidencia
 
 ### Prueba ANOVA
@@ -74,6 +76,8 @@ Los resultados no son significativos, por lo que no podemos afirmar que haya dif
 
 ### Promedio de ingresos para cada tipo de incidencia
 
+![Promedio de ingresos para cada tipo de incidencia](../images/ingreso_medio_por_tipo_incidencia.jpg)
+
 Como vemos, los promedios en ingresos para cada tipo de incidencia son muy similares
 
 ## Análisis por Severidad
@@ -83,10 +87,12 @@ Como vemos, los promedios en ingresos para cada tipo de incidencia son muy simil
 Los resultados siguen sin ser significativos, aunque el p-valor es más bajo que cuando no se tiene en cuenta la severidad de las incidencias.
 
 ### Ingresos promedio en función de la severidad de la incidencia
+![Promedio de ingresos por severidad de la incidencia](../images/ingreso_medio_por_severidad_incidencia.jpg)
 
 Resulta llamativo que los ingresos más bajos se obtengan cuando la severidad es más baja y que los más altos se den con severidad media.
 
 ## Heatmap de Correlaciones
+![Matriz correlaciones](../images/matriz_correlaciones.jpg)
 
 ## Resumen Ejecutivo de Hallazgos
 
