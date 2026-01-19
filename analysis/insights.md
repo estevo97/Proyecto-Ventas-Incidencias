@@ -144,16 +144,16 @@ No se han encontrado, por el momento, insights significativos. El volumen de dat
 | Total incidencias | 54 |
 
 ### 💰 Impacto económico
-| Métrica | Valor |
+| Métrica | Valor (promedio) |
 |---|---:|
-| Ingresos días CON incidencias | €44,461.72 |
-| Ingresos días SIN incidencias | €29,976.92 |
+| Ingresos días CON incidencias | 823.37 €|
+| Ingresos días SIN incidencias | 810.19 €|
 | Diferencia media diaria | **€13.18 (+1.63%)** |
 
 ### 📈 Correlación y significancia
 | Métrica | Valor |
 |---|---:|
-| Pearson r | 0.0475 (p = 6.5484e-01) |
+| Point biserial | 0.0475 (p = 6.5484e-01) |
 | Interpretación | Correlación débil positiva |
 | Resultado pruebas | ✗ Diferencia NO significativa (p ≥ 0.05) — no evidencia de impacto |
 
