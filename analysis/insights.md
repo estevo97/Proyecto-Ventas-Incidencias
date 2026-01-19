@@ -60,7 +60,6 @@ Queremos determinar si hay diferencia significativa entre la media de ingresos e
 
 ### Comparación: Días CON vs SIN Incidencias
 
-**COMPARACIÓN: Días CON vs SIN Incidencias**
 
 - 📈 Días CON incidencias  
   - Media: €823.37  
