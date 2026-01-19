@@ -46,45 +46,7 @@ Proyecto-Ventas-Incidencias/
 
 ## 📊 Datasets
 
-### Ventas_Realistas.csv
-**90 días de datos** (Enero - Marzo 2024) con **3,645 transacciones**
-
-| Campo | Descripción | Ejemplo |
-|-------|-------------|---------|
-| `VentaID` | Identificador único | V001 |
-| `Fecha` | Fecha de venta | 2024-01-15 |
-| `Ruta` | Origen-Destino | BCN-PMI |
-| `TipoTransporte` | Aviación o Ferrocarril | Aviación |
-| `Producto` | Tipo de producto vendido | Bocadillo, Cerveza |
-| `Cantidad` | Unidades vendidas | 2 |
-| `PrecioUnitario` | Precio por unidad (€) | 3.50 |
-| `Ingresos` | Total transacción (€) | 7.00 |
-
-**Características:**
-- Variación estacional (picos en fines de semana)
-- Diferencias por ruta (BCN-PMI más rentable)
-- Tipos de transporte con precios diferenciados
-
-### Incidencias.csv
-**54 incidencias** registradas durante el período
-
-| Campo | Descripción | Ejemplo |
-|-------|-------------|---------|
-| `IncidenciaID` | Identificador único | INC001 |
-| `Fecha` | Fecha de incidencia | 2024-01-10 |
-| `Ruta` | Ruta afectada | MAD-BCN |
-| `Fecha-Ruta` | Combinación | 2024-01-10_MAD-BCN |
-| `TipoIncidencia` | Tipo de problema | Terminal de pago |
-| `Severidad` | Baja/Media/Alta | Alta |
-| `DuracionMin` | Duración en minutos | 45 |
-
-**Tipos de Incidencias:**
-- Terminal de pago (26%)
-- Cancelación (26%)
-- Problema TPV (31%)
-- Retraso (11%)
-- Avería (9%)
-- Falta Stock (11%)
+#### ver Documentation
 
 ---
 
