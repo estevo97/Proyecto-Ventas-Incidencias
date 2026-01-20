@@ -59,6 +59,8 @@ El dashboard consta de **3 páginas principales:**
 - **Gráfico:** Evolución mensual Ingresos vs Objetivo
 - **Hallazgos clave:**
 
+Enlace al dashboard en hugging face: https://huggingface.co/spaces/estevoag/Proyecto-Ventas-Incidencias2
+
 ### Página 2: Análisis de Ventas
 
 
