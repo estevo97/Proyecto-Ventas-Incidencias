@@ -166,7 +166,7 @@ No se han encontrado, por el momento, insights significativos. El volumen de dat
 ---
 
 ## Recomendaciones
-- Acción inmediata (p. ej., priorizar X, recopilar más datos Y).
+- Acción inmediata (p. ej., priorizar X, recopilar más datos Y, etc).
 - Experimentos/validaciones a realizar.
 
 ## Reproducibilidad y visuales
