@@ -57,6 +57,11 @@ desktop.ini
 # Logs
 *.log
 
+# Environment variables
+.env
+.env.local
+.env.*.local
+
 # Virtual environments
 mi_nuevo_entorno/
 venv/
