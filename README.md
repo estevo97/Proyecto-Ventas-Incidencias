@@ -22,8 +22,11 @@ Proyecto-Ventas-Incidencias/
 │
 ├── data/
 │   └── raw/
-│       ├── Ventas_Realistas.csv        # Datos de ventas generados
-│       └── Incidencias.csv             # Datos de incidencias generadas
+│       ├── Calendario.csv        
+│       ├── Rutas.csv      
+│       ├── Productos_nuevos.csv        
+│       ├── Ventas_Realistas.csv       
+│       └── Incidencias_clean.csv            
 │
 ├── scripts/
 │   ├── generar_ventas_realistas.py     # Script generador de datos de ventas
