@@ -39,7 +39,7 @@ INCIDENCIAS_PATH = DATA_DIR / "incidencias_proc2.csv"
 sns.set_style("whitegrid")
 plt.rcParams["figure.figsize"] = (12, 6)
 
-
+# porcentaje de diferencia segura, evitando division por cero
 def safe_pct(diff: float, base: float) -> float:
     if base == 0 or np.isnan(base):
         return 0.0
@@ -49,16 +49,17 @@ def safe_pct(diff: float, base: float) -> float:
 def format_eur(value: float) -> str:
     return f"€{value:,.2f}"
 
-
+# crea la carpeta de imagenes si no existe
 def ensure_dirs() -> None:
     IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 
-
+# elimina espacios en blanco al principio y al final de los nombres de las columnas
 def normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
     df.columns = [c.strip() for c in df.columns]
     return df
 
 
+# cambia el nombre de algunas columnas si vienen en minusculas y cambia el formato de fecha a datatime
 def load_data() -> tuple[pd.DataFrame, pd.DataFrame]:
     ventas = normalize_columns(pd.read_csv(VENTAS_PATH))
     incidencias = normalize_columns(pd.read_csv(INCIDENCIAS_PATH))
@@ -85,7 +86,7 @@ def load_data() -> tuple[pd.DataFrame, pd.DataFrame]:
 
     return ventas, incidencias
 
-
+# creacion de la tabla df_diario que recopila el total de ingresos por dia y mergea la nueva data reciente con la anterior.
 def build_daily_table(ventas: pd.DataFrame, incidencias: pd.DataFrame) -> pd.DataFrame:
     ventas_diarias = (
         ventas.groupby("Fecha")
@@ -108,7 +109,7 @@ def build_daily_table(ventas: pd.DataFrame, incidencias: pd.DataFrame) -> pd.Dat
 
     return df_diario
 
-
+# Tabla de correlaciones entre variables cuantitativas. Se guarda como imagen en carpeta images.
 def plot_correlation_heatmap(df_diario: pd.DataFrame) -> None:
     corr = df_diario[["Ingresos", "Tickets", "NumIncidencias", "Suma de DuracionMin", "Fecha"]].corr()
     plt.figure(figsize=(10, 8))
@@ -118,7 +119,7 @@ def plot_correlation_heatmap(df_diario: pd.DataFrame) -> None:
     plt.savefig(IMAGES_DIR / "matriz_correlaciones.jpg", dpi=300, bbox_inches="tight", facecolor=plt.gcf().get_facecolor())
     plt.close()
 
-
+# Gráfico de dispersión entre número de incidencias e ingresos, con línea de regresión. 
 def plot_scatter_incidencias(df_diario: pd.DataFrame) -> None:
     x = df_diario["NumIncidencias"]
     y = df_diario["Ingresos"]
@@ -139,7 +140,7 @@ def plot_scatter_incidencias(df_diario: pd.DataFrame) -> None:
     plt.savefig(IMAGES_DIR / "correlacion_incidencias_ingresos.jpg", dpi=300, bbox_inches="tight", facecolor=plt.gcf().get_facecolor())
     plt.close()
 
-
+# Gráfico de barras comparando ingresos medios en días con incidencias vs sin incidencias.
 def plot_bar_contra_sin(ingresos_con: pd.Series, ingresos_sin: pd.Series) -> None:
     fig, ax = plt.subplots(figsize=(8, 5))
     data_plot = pd.DataFrame(
@@ -155,7 +156,7 @@ def plot_bar_contra_sin(ingresos_con: pd.Series, ingresos_sin: pd.Series) -> Non
     plt.savefig(IMAGES_DIR / "BARPLOT_distribucion_ingresos_con_vs_sin_incidencias.jpg", dpi=300, bbox_inches="tight", facecolor=plt.gcf().get_facecolor())
     plt.close()
 
-
+# Gráfico de boxplot comparando la distribución de ingresos en días con incidencias vs sin incidencias.
 def plot_box_contra_sin(df_diario: pd.DataFrame) -> None:
     df_comp = df_diario.copy()
     df_comp["Categoría"] = df_comp["TieneIncidencia"].map({0: "SIN Incidencias", 1: "CON Incidencias"})
@@ -170,7 +171,7 @@ def plot_box_contra_sin(df_diario: pd.DataFrame) -> None:
     plt.savefig(IMAGES_DIR / "distribucion_ingresos_con_vs_sin_incidencias.jpg", dpi=300, bbox_inches="tight", facecolor=plt.gcf().get_facecolor())
     plt.close()
 
-
+# Gráfico de barras comparando ingresos medios por tipo de incidencia.
 def plot_tipo_incidencia(impacto_tipo: pd.DataFrame) -> None:
     impacto_tipo_plot = impacto_tipo.reset_index()
     fig, ax = plt.subplots(figsize=(10, 5))
@@ -206,7 +207,7 @@ def plot_tipo_incidencia(impacto_tipo: pd.DataFrame) -> None:
     plt.savefig(IMAGES_DIR / "ingreso_medio_por_tipo_incidencia.jpg", dpi=300, bbox_inches="tight", facecolor=plt.gcf().get_facecolor())
     plt.close()
 
-
+# Gráfico de barras comparando ingresos medios por severidad de la incidencia.
 def plot_severidad(impacto_severidad: pd.DataFrame) -> None:
     impacto_sev_plot = impacto_severidad.reset_index()
     fig, ax = plt.subplots(figsize=(10, 5))
@@ -230,7 +231,7 @@ def plot_severidad(impacto_severidad: pd.DataFrame) -> None:
     plt.savefig(IMAGES_DIR / "ingreso_medio_por_severidad_incidencia.jpg", dpi=300, bbox_inches="tight", facecolor=plt.gcf().get_facecolor())
     plt.close()
 
-
+# Construcción del markdown con insights, resultados y recomendaciones. Se guarda como insights.md en la carpeta analysis.
 def build_insights_markdown(
     df_diario: pd.DataFrame,
     corr_pbis: float,
@@ -400,7 +401,7 @@ def build_insights_markdown(
 
     return "\n".join(lines)
 
-
+# Función principal que ejecuta todo el análisis, genera gráficos y escribe insights.md
 def main() -> None:
     ensure_dirs()
 
